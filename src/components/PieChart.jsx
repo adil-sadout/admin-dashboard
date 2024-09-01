@@ -2,6 +2,8 @@ import { ResponsivePie } from "@nivo/pie";
 import { tokens } from "../theme";
 import { useTheme, useMediaQuery  } from "@mui/material";
 import { mockPieData as data } from "../data/mockData";
+import React from 'react';
+
 
 const PieChart = () => {
   const theme = useTheme();
