@@ -10,39 +10,41 @@ import Header from "../../components/Header";
 const Team = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   const columns = [
-    { field: "id", headerName: "ID" },
+    { field: "id", headerName: "ID", width: 90 }, // Set fixed width
     {
       field: "name",
       headerName: "Name",
-      flex: 1,
+      width: 200, // Set fixed width
       cellClassName: "name-column--cell",
     },
     {
       field: "age",
       headerName: "Age",
       type: "number",
+      width: 100, // Set fixed width
       headerAlign: "left",
       align: "left",
     },
     {
       field: "phone",
       headerName: "Phone Number",
-      flex: 1,
+      width: 150, // Set fixed width
     },
     {
       field: "email",
       headerName: "Email",
-      flex: 1,
+      width: 200, // Set fixed width
     },
     {
       field: "accessLevel",
       headerName: "Access Level",
-      flex: 1,
+      width: 150, // Set fixed width
       renderCell: ({ row: { access } }) => {
         return (
           <Box
-            width="60%"
+            width="100%"
             m="0 auto"
             p="5px"
             display="flex"
@@ -77,9 +79,11 @@ const Team = () => {
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
+            overflowX: "auto", // Allow horizontal scrolling
           },
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
+            whiteSpace: "nowrap", // Prevent text wrapping
           },
           "& .name-column--cell": {
             color: colors.greenAccent[300],
@@ -100,7 +104,14 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
+        <div style={{ height: '100%', width: '100%', overflowX: 'auto' }}>
+          <DataGrid
+            checkboxSelection
+            rows={mockDataTeam}
+            columns={columns}
+            disableColumnMenu // Optional: Disables the column menu to prevent text shortening
+          />
+        </div>
       </Box>
     </Box>
   );

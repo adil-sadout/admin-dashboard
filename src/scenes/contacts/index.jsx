@@ -65,10 +65,12 @@ const Contacts = () => {
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
+            overflow:"auto"
             // Remove overflowX here
           },
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
+            whiteSpace: "nowrap"
           },
           "& .name-column--cell": {
             color: colors.greenAccent[300],
@@ -97,6 +99,7 @@ const Contacts = () => {
             rows={mockDataContacts}
             columns={columns}
             components={{ Toolbar: GridToolbar }}
+            disableColumnMenu 
             
           />
         </div>
