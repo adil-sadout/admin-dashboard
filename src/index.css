@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
+
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-left: 20px;
+  
+}
+
+body{
+  width: 95%;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #39455e;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6275a0;
+  border-radius:20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #435e9e;
+}
+
+.fc .fc-toolbar-title{
+  text-align: center;
+}
+
+@media only screen and (max-width: 650px) {
+  .content {
+    width: 99%;
+  }
+  .app{
+    width: 95%;
+    
+    
+  }
+}
